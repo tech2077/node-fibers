@@ -10,16 +10,6 @@ else
 	CPPFLAGS += -g -O3 -minline-all-stringops
 endif
 
-ifeq ($(NODE_BITS), )
-	CPPFLAGS += -m32
-endif
-ifeq ($(NODE_BITS), 32)
-	CPPFLAGS += -m32
-endif
-ifeq ($(NODE_BITS), 64)
-	CPPFLAGS += -m64
-endif
-
 ifeq ($(NODE_PLATFORM), linux)
 	# SJLJ in linux = hangs & segfaults
 	CPPFLAGS += -DCORO_UCONTEXT
